@@ -60,5 +60,30 @@ function deleteCheck(e){
 }
 
 function filterTodo(e){
+    const todos = todoList.childNodes;
+
+    todos.forEach(function(elem){
+        switch(e.target.value){
+            
+            case "all":
+                elem.style.display = "flex";
+                break;
+            case "completed":
+                if (elem.classList.contains("completed")){
+                    elem.style.display = "flex";
+                }else{
+                    elem.style.display = "none";
+                }
+                break;
+            case 'uncompleted':
+                if (!elem.classList.contains("completed")){
+                    elem.style.display = "flex";
+                }else{
+                    elem.style.display = "none";
+                }
+                break;
+
+        }
+    })
     
 }
